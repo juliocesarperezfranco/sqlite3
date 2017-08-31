@@ -31,4 +31,4 @@ INSTALL(TARGETS SQLite3
         LIBRARY DESTINATION lib
         ARCHIVE DESTINATION lib)
 
-INSTALL(FILES sqlite3.h  DESTINATION include/sqlite3)
+INSTALL(FILES sqlite3.h sqlite3ext.h DESTINATION include/sqlite3)
