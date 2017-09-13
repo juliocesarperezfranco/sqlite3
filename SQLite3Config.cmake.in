@@ -1,0 +1,16 @@
+# - Config file for the FooBar package
+# It defines the following variables
+#  SQLITE3_INCLUDE_DIRS - include directories for FooBar
+#  SQLITE3_LIBRARIES    - libraries to link against
+#  SQLITE3_EXECUTABLE   - the bar executable
+
+# Compute paths
+GET_FILENAME_COMPONENT(SQLITE3_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+SET(SQLITE3_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+INCLUDE("${SQLITE3_CMAKE_DIR}/SQLite3Targets.cmake")
+
+# These are IMPORTED targets created by SQLite3Targets.cmake
+SET(SQLITE3_LIBRARIES SQLite3)
+# SET(SQLITE3_EXECUTABLE shell)
